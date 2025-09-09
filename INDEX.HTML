@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palabra Secreta – Impostor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Palabra Secreta – Impostor</h1>
+
+        <div id="setup">
+            <h2>Configuración del juego</h2>
+            <input type="text" id="playerName" placeholder="Nombre del jugador">
+            <button onclick="addPlayer()">Añadir jugador</button>
+            <ul id="playersList"></ul>
+            <input type="text" id="secretWord" placeholder="Palabra secreta">
+            <input type="number" id="numImpostors" placeholder="Número de impostores" min="1">
+            <button onclick="startGame()">Empezar juego</button>
+        </div>
+
+        <div id="roleScreen" class="hidden">
+            <h2>Tu rol:</h2>
+            <p id="roleText"></p>
+            <button onclick="nextPlayer()">Siguiente jugador</button>
+        </div>
+
+        <div id="roundScreen" class="hidden">
+            <h2>Ronda de pistas</h2>
+            <p id="roundPrompt"></p>
+            <input type="text" id="playerClue" placeholder="Escribe tu pista">
+            <button onclick="submitClue()">Enviar pista</button>
+            <ul id="cluesList"></ul>
+            <button id="voteButton" class="hidden" onclick="startVoting()">Votar impostor</button>
+        </div>
+
+        <div id="voteScreen" class="hidden">
+            <h2>Votación</h2>
+            <select id="voteSelect"></select>
+            <button onclick="submitVote()">Votar</button>
+        </div>
+
+        <div id="resultScreen" class="hidden">
+            <h2>Resultado</h2>
+            <p id="resultText"></p>
+            <button onclick="resetGame()">Reiniciar juego</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
